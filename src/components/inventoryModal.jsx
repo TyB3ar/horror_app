@@ -10,7 +10,6 @@ const InventoryModal = ({ message, onClose }) => {
     <div className="inventory-modal-overlay" onClick={onClose}>
       <div className="inventory-modal" onClick={(e) => e.stopPropagation()}>
         <p>{message}</p>
-        <button onClick={onClose}>Close</button>
       </div>
     </div>,
     document.body

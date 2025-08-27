@@ -1,15 +1,18 @@
+:root {
+  --inventory-height: 80px; /* Adjust this to match your actual inventory height */
+  --modal-offset: 20px;     /* Space between modal and inventory bar */
+}
+
 .inventory-modal-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  align-items: flex-end; /* align near bottom */
-  justify-content: center;
-  padding-bottom: 150px; /* space above inventory bar */
-  pointer-events: none; /* allow clicks to pass through if needed */
+  bottom: calc(var(--inventory-height) + var(--modal-offset));
+  left: 30px; 
+  margin-bottom: 2rem;
   z-index: 9999;
+  pointer-events: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
 }
 
 .inventory-modal {
@@ -22,25 +25,10 @@
   font-size: 1rem;
   max-width: 300px;
   text-align: center;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  z-index: 9999;
-  background: white;
-  transform: translate(-50%, -50%);
   pointer-events: auto;
   animation: fadeInUp 0.3s ease-out;
 }
 
-.inventory-modal button {
-  margin-top: 15px;
-  background: #ff4444;
-  border: none;
-  padding: 8px 16px;
-  color: white;
-  border-radius: 4px;
-  cursor: pointer;
-}
 
 @keyframes fadeInUp {
   from {

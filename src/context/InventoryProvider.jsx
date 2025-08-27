@@ -22,34 +22,36 @@ export const InventoryProvider = ({ children }) => {
       let verb;
       switch (actionType) {
         case 'add':
-          verb = 'added to';
+          verb = 'added to inventory';
           break;
         case 'drop':
-          verb = 'dropped from';
+          verb = 'dropped';
           break;
         case 'use':
-          verb = 'used from';
+          verb = 'used';
           break;
         default:
-          verb = 'moved to';
+          verb = 'moved';
       }
 
       const message = item
-        ? `${item.name} was ${verb} inventory.`
-        : `Item ${itemId} was ${actionType} inventory.`;
+        ? `${item.name} was ${verb}.`
+        : `Item ${itemId} was ${actionType}.`;
 
       setModalMessage(message);
       setShowModal(true);
       console.log('Triggering modal:', message);
     };
     
-    // Timer for Moda, disappear after 2 seconds
+    
+    // Timer for Modal, disappear after 2 seconds
     useEffect(() => {
       if (showModal) {
         const timer = setTimeout(() => setShowModal(false), 2000);
         return () => clearTimeout(timer); 
       }
     }, [showModal]);
+  
 
   return (
     <InventoryContext.Provider value={{ state, dispatch, modalMessage, showModal, setShowModal, triggerModal }}>

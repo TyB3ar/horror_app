@@ -14,6 +14,7 @@ export default function Inventory() {
         bottom: 0,
         left: 0,
         right: 0,
+        height: '5rem',
         background: isOver ? '#def' : '#f8f8f8',
         borderTop: '2px solid #ccc',
         padding: '1rem',
