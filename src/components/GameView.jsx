@@ -1,7 +1,7 @@
 import PageLayout from './PageLayout';
 import PageContainer from './PageContainer';
 import { roomLayouts } from '../config/roomLayouts';
-import '../styles/GameView.css';
+import '../styles/gameView.css';
 import { useState, useLayoutEffect } from 'react';
 
 function GameView({ currentRoom, viewBackground, viewPathData, viewColorMap}) {
