@@ -15,7 +15,7 @@ const PAGE_CONTAINERS = {
     page10: { elevatorPanel: [] },
   }
 
-export default function PageContainer({ page, container }) {
+export default function PageContainer({ page, container, showFill }) {
   const { state } = useInventory();
   // check if page and container exist in state
   const pageContainers = state.containers[page] || {};
