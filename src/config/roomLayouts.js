@@ -15,10 +15,10 @@ export const roomLayouts = {
         background: '', 
         conatiners: ['freezer1', 'freezer2', 'freezer3', 'freezer4'],
         positions: {
-            freezer1: { top: '', left: '' },
-            freezer2: { top: '', left: '' },
-            freezer3: { top: '', left: '' }, 
-            freezer4: { top: '', left: '' },
+            freezer1: { top: '20%', left: '10%' },
+            freezer2: { top: '20%', left: '30%' },
+            freezer3: { top: '20%', left: '50%' }, 
+            freezer4: { top: '20%', left: '70%' },
         },
     },
     drainWall: {

@@ -14,13 +14,17 @@ export default function Inventory() {
         bottom: 0,
         left: 0,
         right: 0,
-        height: '5rem',
-        background: isOver ? '#def' : '#f8f8f8',
+        height: '7vw',
+        background: isOver ? '#def' : '#f8f8f87a',
         borderTop: '2px solid #ccc',
         padding: '1rem',
         display: 'flex',
         gap: '1rem',
         overflowX: 'auto',
+        zIndex: '100',
+        margin: '0 2rem 2rem 2rem',
+        borderRadius: '15px',
+        alignItems: 'center', // <-- Added to center items vertically
       }}
     >
       <strong>Inventory:</strong>

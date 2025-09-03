@@ -43,7 +43,6 @@ export const InventoryProvider = ({ children }) => {
       console.log('Triggering modal:', message);
     };
     
-    
     // Timer for Modal, disappear after 2 seconds
     useEffect(() => {
       if (showModal) {
