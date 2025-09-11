@@ -10,7 +10,7 @@ const SplashPage = ({ onLogin, onSignup, onGuest }) => {
       <div className="button-group">
         <button onClick={onLogin}>Login</button>
         <button onClick={onSignup}>Sign Up</button>
-        <button onClick={onGuest}>Continue as Guest</button>
+        <button onClick={onGuest}>Continue</button>
       </div>
     </div>
   );

@@ -7,6 +7,7 @@ export function RoomSVG({ backgroundImage, paths, showFill, onPathClick }) {
             style={{ width: '100%', height: '100%' }}
             onClick={onPathClick}
         >
+        {backgroundImage && 
         <image
             href={backgroundImage}
             x="0"
@@ -15,7 +16,8 @@ export function RoomSVG({ backgroundImage, paths, showFill, onPathClick }) {
             height="1343"
             style={{ pointerEvents: "none", cursor: "default" }}
         />
-        {paths.map((path, index) => (
+        }
+        {Array.isArray(paths) && paths.map((path, index) => (
             <path
                 key={index}
                 id={path.id}

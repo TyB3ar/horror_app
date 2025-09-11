@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
+import PageLayout from '../components/PageLayout.jsx';
 import ContainerModal from '../components/ContainerModal';
 import { Link } from 'react-router-dom'
 import GameView from '../components/GameView';
 import { iceRoomV1_pathData } from '../assets/iceRoomV1_paths.js';
 import iceRoomV1_bg from '../assets/iceRoomV1_bg.jpeg';
 import { iceRoomV1_colorMap } from '../assets/iceRoomV1_colorMap.js';
+import { roomLayouts } from '../config/roomLayouts.js';
 
 
 const CONTAINERS = ['freezer1', 'freezer2', 'freezer3', 'freezer4'];
+
+const room = roomLayouts.freezerWall; 
 
 const Page1 = () => {
 
@@ -21,6 +25,34 @@ const Page1 = () => {
     freezer4: { gridRow: 6, gridColumn: 5 },
   };
 
+  return (
+    <PageLayout
+      backgroundImage={room.background}
+      containerPositions={room.positions}
+    >
+      {room.containers.map((container) => (
+        <button
+          key={container}
+          container={container}
+          onClick={() => setOpenModal(container)}
+        >
+          Open {container}
+        </button>
+      ))}
+
+      {room.containers.map((container) => (
+        <ContainerModal
+          key={container}
+          page="page1"
+          container={container}
+          open={openModal === container}
+          onClose={() => setOpenModal(null)}
+        />
+      ))}
+    </PageLayout>
+  );
+
+  /*
   return (
     <>
       <h2>Morgue Freezer Wall - page 1</h2>
@@ -58,7 +90,8 @@ const Page1 = () => {
       ))}
     </>
   );
+  */
+
 };
+
 export default Page1;
-
-

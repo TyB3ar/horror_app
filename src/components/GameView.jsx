@@ -33,8 +33,16 @@ function GameView({ currentRoom, viewBackground, viewPathData, viewColorMap}) {
           : p
       )
     );
+
+    // Adding in to check if activeColor is 
+    const colorHandler = viewColorMap[activeColor]; 
+    if (typeof colorHandler === 'function') {
+      colorHandler(); 
+    } else {
+      console.warn(`No function found for color: ${activeColor}`);
+    }
     
-    viewColorMap[activeColor]()
+    // viewColorMap[activeColor]()
   }
 
 
