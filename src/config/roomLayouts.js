@@ -1,5 +1,8 @@
 /* Room Layouts, for container specifications and mapping */
-import iceRoomV1_bg from '../assets/iceRoomV1_bg.jpeg';
+import iceRoomV1_bg from '../assets/rooms/iceRoomV1_bg.jpeg';
+import hallway from '../assets/rooms/hallway.jpeg'; 
+import { iceRoomV1_pathData } from '../assets/iceRoomV1_paths';
+
 
 export const roomLayouts = {
     /* Morgue Freezer Room - 2 Views */
@@ -16,10 +19,10 @@ export const roomLayouts = {
         background: iceRoomV1_bg, 
         containers: ['freezer1', 'freezer2', 'freezer3', 'freezer4'],
         positions: {
-            freezer1: { top: '50%', left: '37%' },
-            freezer2: { top: '50%', left: '49%' },
-            freezer3: { top: '64%', left: '37%' }, 
-            freezer4: { top: '64%', left: '49%' },
+            freezer1: { x: 600, y: 675 },
+            freezer2: { x: 788, y: 675 },
+            freezer3: { x: 600, y: 860 },
+            freezer4: { x: 788, y: 860 },
         },
     },
     drainWall: {
@@ -54,7 +57,7 @@ export const roomLayouts = {
         },
     },
     blockedExitView: {
-        background: '', 
+        background: hallway, 
         containers: ['blockedExit'],
         positions: {
             blockedExit: { top: '', left: '' },

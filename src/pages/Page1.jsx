@@ -4,7 +4,7 @@ import ContainerModal from '../components/ContainerModal';
 import { Link } from 'react-router-dom'
 import GameView from '../components/GameView';
 import { iceRoomV1_pathData } from '../assets/iceRoomV1_paths.js';
-import iceRoomV1_bg from '../assets/iceRoomV1_bg.jpeg';
+import iceRoomV1_bg from '../assets/rooms/iceRoomV1_bg.jpeg';
 import { iceRoomV1_colorMap } from '../assets/iceRoomV1_colorMap.js';
 import { roomLayouts } from '../config/roomLayouts.js';
 
