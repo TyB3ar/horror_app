@@ -17,6 +17,7 @@ const Page1 = () => {
 
   const [openModal, setOpenModal] = useState(null);
 
+  /*
   // use this to re-position buttons on page
   const containerPositions = {
     freezer1: { gridRow: 1, gridColumn: 5 },
@@ -24,6 +25,7 @@ const Page1 = () => {
     freezer3: { gridRow: 3, gridColumn: 7 },
     freezer4: { gridRow: 6, gridColumn: 5 },
   };
+  */
 
   return (
     <PageLayout
@@ -40,6 +42,13 @@ const Page1 = () => {
         </button>
       ))}
 
+      <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, height: '100%', width: '100%'}}>
+        <GameView viewBackground={iceRoomV1_bg} viewColorMap={iceRoomV1_colorMap} viewPathData={iceRoomV1_pathData}>
+          <Link className='left-button' to='/page2' style={{zIndex:100}}>Left</Link>
+          <Link className='right-button' to='/page3'>Right</Link>
+        </GameView>
+      </div>
+
       {room.containers.map((container) => (
         <ContainerModal
           key={container}
@@ -51,6 +60,7 @@ const Page1 = () => {
       ))}
     </PageLayout>
   );
+  
 
   /*
   return (

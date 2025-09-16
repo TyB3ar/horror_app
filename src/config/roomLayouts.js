@@ -5,7 +5,7 @@ import { iceRoomV1_pathData } from '../assets/iceRoomV1_paths';
 
 
 export const roomLayouts = {
-    /* Morgue Freezer Room - 2 Views */
+    /* Morgue Freezer Room - 4 Views */
     tableWall: {
         background: '',
         containers: ['bodyBag', 'propertyBag', 'medicalChart'],
@@ -19,8 +19,8 @@ export const roomLayouts = {
         background: iceRoomV1_bg, 
         containers: ['freezer1', 'freezer2', 'freezer3', 'freezer4'],
         positions: {
-            freezer1: { x: 600, y: 675 },
-            freezer2: { x: 788, y: 675 },
+            freezer1: { x: 788, y: 675 },
+            freezer2: { x: 600, y: 675 },
             freezer3: { x: 600, y: 860 },
             freezer4: { x: 788, y: 860 },
         },
@@ -41,26 +41,13 @@ export const roomLayouts = {
             cardReader: { top: '', left: '' },
         },
     },
-    /* Hallway - 3 Views */
-    elevatorEntryView: {
-        background: '',
-        containers: [],
-        positions: {
-            container: { top: '', left: '' },
-        },
-    },
-    officeEntry: {
-        background: '',
-        containers: ['fireExtinguisherCase'],
-        positions: {
-            fireExtinguisherCase: { top: '', left: '' },
-        },
-    },
-    blockedExitView: {
+    /* Hallway - 1 Views */
+    blockedExit: {
         background: hallway, 
-        containers: ['blockedExit'],
+        containers: ['blockedExit', 'fireExtinguisherCase'],
         positions: {
             blockedExit: { top: '', left: '' },
+            fireExtinguisherCase: { top: '', left: '' },
         },
     },
     /* Office */

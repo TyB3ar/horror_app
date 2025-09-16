@@ -1,7 +1,7 @@
 export const iceRoomV1_pathData = [
   {
 id: "IceRoomPath1",
-    fill:`#00ff0000`,
+    fill:`#00ff0000`, // lime green 
     className: " ",
     d:`M 1270.61,588.03
         C 1270.61,588.03 1200.45,602.90 1200.45,602.90
@@ -22,7 +22,7 @@ id: "IceRoomPath1",
   },
   {
     id: "IceRoomPath2",
-    fill:`#0000ff00`,
+    fill:`#0000ff00`, // blue 
     className: " ",
     d:`M 741.90,788.45
         C 741.90,788.45 741.90,954.41 741.90,954.41
@@ -33,7 +33,7 @@ id: "IceRoomPath1",
   },
   {
     id: "IceRoomPath3",
-    fill:`#0000ff00`,
+    fill:`#0000ff00`, // blue
     className: " ",
     d:`M 497.98,596.08
       C 497.98,596.08 715.30,596.08 715.30,596.08
@@ -43,7 +43,7 @@ id: "IceRoomPath1",
   },
   {
     id: "IceRoomPath4",
-    fill:`#00cc0000`,
+    fill:`#00cc0000`, // darker green 
     className: " ",
     d:`M 740.14,603.54
       C 740.14,603.54 745.11,761.25 745.11,761.25
@@ -53,7 +53,7 @@ id: "IceRoomPath1",
   },
   {
     id: "IceRoomPath5",
-    fill:`#dd000000`,
+    fill:`#dd000000`, // darker red 
     className: " ",
     d:` M 501.70,406.08
       C 501.70,406.08 502.95,577.46 502.95,577.46
@@ -63,7 +63,7 @@ id: "IceRoomPath1",
   },
   {
     id: "IceRoomPath6",
-    fill:`#00dd0000`,
+    fill:`#00dd0000`, // green 
     className: " ",
     d:`M 505.43,787.33
       C 505.43,787.33 718.61,788.25 718.61,788.25
@@ -73,7 +73,7 @@ id: "IceRoomPath1",
   },
   {
     id: "IceRoomPath7",
-    fill:`#cc000000`,
+    fill:`#cc000000`, // red 
     className: " ",
     d:`M 981.07,955.83
       C 981.07,955.83 981.06,789.81 981.06,789.81
@@ -83,7 +83,7 @@ id: "IceRoomPath1",
   },
   {
     id: "IceRoomPath8",
-    fill:`#00bb0000`,
+    fill:`#00bb0000`, // green 
     className: " ",
     d:`M 1224.12,953.58
       C 1224.12,953.58 1224.70,792.52 1224.70,792.52
@@ -97,7 +97,7 @@ id: "IceRoomPath1",
   },
   {
     id: "IceRoomPath9",
-    fill:`#0000ff00`,
+    fill:`#0000ff00`, // blue 
     className: " ",
     d:`M 1613.27,792.21
         C 1613.27,792.21 1465.68,791.37 1465.68,791.37
@@ -107,7 +107,7 @@ id: "IceRoomPath1",
   },
   {
     id: "IceRoomPath10",
-    fill:`#0000ff00`,
+    fill:`#0000ff00`, // blue 
     className: " ",
     d:`M 1466.98,604.76
       C 1466.98,604.76 1677.91,602.21 1677.91,602.21
@@ -117,7 +117,7 @@ id: "IceRoomPath1",
   },
   {
     id: "IceRoomPath11",
-    fill:`#bb000000`,
+    fill:`#bb000000`, // red 
     className: " ",
     d:`M 1444.27,602.17
       C 1444.27,602.17 1287.93,602.79 1287.93,602.79
@@ -133,7 +133,7 @@ id: "IceRoomPath1",
   },
   {
     id: "IceRoomPath12",
-    fill:`#ff000000`,
+    fill:`#ff000000`, // brighter red 
     className: " ",
     d:`M 124.82,975.38
       C 124.82,975.38 339.17,890.59 339.17,890.59
@@ -145,7 +145,7 @@ id: "IceRoomPath1",
   },
   {
     id: "IceRoomPath13",
-    fill:`#00ee0000`,
+    fill:`#00ee0000`, // green 
     className: " ",
     d:`M 115.87,774.19
       C 115.87,774.19 116.91,810.08 116.91,810.08
@@ -159,7 +159,7 @@ id: "IceRoomPath1",
   },
   {
     id: "IceRoomPath14",
-    fill:`#ee000000`,
+    fill:`#ee000000`, // red 
     className: " ",
     d:`M 1668.00,988.00
       C 1668.00,988.00 2042.00,1196.00 2042.00,1196.00
@@ -172,7 +172,7 @@ id: "IceRoomPath1",
   },
   {
     id: "IceRoomPath15",
-    fill:`#0000ff00`,
+    fill:`#0000ff00`, // blue 
     className: " ",
     d:`M 1730.00,790.00
     C 1730.00,790.00 1618.00,796.00 1618.00,796.00

@@ -5,6 +5,12 @@ import { InventoryProvider } from './context/InventoryProvider';
 import { useInventory } from './context/InventoryContext';
 import Inventory from './components/Inventory';
 import InventoryModal from './components/inventoryModal.jsx';
+import DraggableItem from './components/DraggableItem';
+import SplashPage from './pages/Splash'; 
+import PageLayout from './components/PageLayout.jsx';
+import { roomLayouts } from './config/roomLayouts.js';
+import { routeToLayout } from './config/routeMap.js';
+
 import Page1 from './pages/Page1';
 import Page2 from './pages/Page2';
 import Page3 from './pages/Page3';
@@ -12,13 +18,12 @@ import Page4 from './pages/Page4';
 import Page5 from './pages/Page5';
 import Page6 from './pages/Page6';
 import Page7 from './pages/Page7';
-import SplashPage from './pages/Splash'; 
-import Login from './users/Login';
-import Signup from './users/Signup'; 
-import DraggableItem from './components/DraggableItem';
 import Page8 from './pages/Page8';
 import Page9 from './pages/Page9';
 import Page10 from './pages/page10';
+
+import Login from './users/Login';
+import Signup from './users/Signup'; 
 
 function App() {
   return (
@@ -98,8 +103,8 @@ function Main() {
 
   return (
     <>
-
       {/* Simple navigation for testing purposes. Will remove with final version. Rendering if splash page is left first.*/}
+      {/*
       {!hideGlobalUI && (
         <nav
           style={{
@@ -119,6 +124,26 @@ function Main() {
           <Link to={'/iceRoom'}>IceRoomV1</Link>
         </nav>
       )}
+    */}
+
+      {!hideGlobalUI && (
+        <nav 
+          style={{ 
+            padding: '1rem', 
+            borderBottom: '1px solid #ccc', 
+            marginBottom: '1rem', 
+            display: 'flex', 
+            gap: '1rem', 
+            zIndex: 11 
+          }}
+        >
+          {Object.keys(routeToLayout).map((route) => (
+            <Link key={route} to={`/${route}`} style={{ zIndex: '12' }}>
+              {route}
+            </Link>
+          ))}
+        </nav>
+      )}
       
 
       <DndContext onDragStart={handleDragStart} onDragEnd={handleDragEnd} sensors={sensors}>
@@ -130,6 +155,30 @@ function Main() {
               onGuest={() => navigate("/page1")} 
             />}
           />
+
+          {Object.entries(routeToLayout).map(([route, layoutKey]) => {
+            const layout = roomLayouts[layoutKey]; 
+            return (
+              <Route 
+                key={route}
+                path={`/${route}`}
+                element={
+                  <PageLayout 
+                    backgroundImage={layout.background}
+                    paths={layout.paths || []}
+                    showFill={true}
+                    containerPositions={layout.positions}
+                  >
+                    {layout.containers.map((id) => (
+                      <DraggableItem key={id} id={id} container={id} from={{ page: route, container: id }} /> 
+                    ))}
+                  </PageLayout>
+                }
+              />
+            ); 
+          })}
+
+          {/* 
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />}/> 
           <Route path="/page1" element={<Page1 />} />
@@ -142,7 +191,10 @@ function Main() {
           <Route path="/page8" element={<Page8 />} />
           <Route path="/page9" element={<Page9 />} />
           <Route path="/page10" element={<Page10 />} />
+          */}
+
           <Route path="*" element={<div>Select a page above **INSERT SPLASH PAGE / LOGIN</div>} />
+
         </Routes>
 
         {/* Render for Modal, overlay over everything else */}
@@ -166,7 +218,6 @@ function Main() {
             return <DraggableItem id={activeId} from={activeFrom} image={image} />;
           })() : null}
         </DragOverlay>
-
       </DndContext>
     </>
   );
