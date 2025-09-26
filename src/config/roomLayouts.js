@@ -2,10 +2,27 @@
 import iceRoomV1_bg from '../assets/rooms/iceRoomV1_bg.jpeg';
 import hallway from '../assets/rooms/hallway.jpeg'; 
 import { iceRoomV1_pathData } from '../assets/iceRoomV1_paths';
+import { iceRoomV1_colorMap } from '../assets/iceRoomV1_colorMap';
 
 
 export const roomLayouts = {
     /* Morgue Freezer Room - 4 Views */
+    freezerWall: {
+        background: iceRoomV1_bg, 
+        pathData: iceRoomV1_pathData,
+        colorMap: iceRoomV1_colorMap,
+        containers: ['freezer1', 'freezer2', 'freezer3', 'freezer4'],
+        positions: {
+            freezer1: { x: 788, y: 675 },
+            freezer2: { x: 600, y: 675 },
+            freezer3: { x: 600, y: 860 },
+            freezer4: { x: 788, y: 860 },
+        },
+        links: {
+            left: '/page2', /* Table Wall  */
+            right: '/page3' /* Drain Wall */
+        }
+    },
     tableWall: {
         background: '',
         containers: ['bodyBag', 'propertyBag', 'medicalChart'],
@@ -15,16 +32,6 @@ export const roomLayouts = {
             medicalChart: { top: '', left: '' },  
         },
     }, 
-    freezerWall: {
-        background: iceRoomV1_bg, 
-        containers: ['freezer1', 'freezer2', 'freezer3', 'freezer4'],
-        positions: {
-            freezer1: { x: 788, y: 675 },
-            freezer2: { x: 600, y: 675 },
-            freezer3: { x: 600, y: 860 },
-            freezer4: { x: 788, y: 860 },
-        },
-    },
     drainWall: {
         background: '',
         containers: ['drain', 'fireExitMap'], 

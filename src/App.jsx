@@ -6,10 +6,8 @@ import { useInventory } from './context/InventoryContext';
 import Inventory from './components/Inventory';
 import InventoryModal from './components/inventoryModal.jsx';
 import DraggableItem from './components/DraggableItem';
+
 import SplashPage from './pages/Splash'; 
-import PageLayout from './components/PageLayout.jsx';
-import { roomLayouts } from './config/roomLayouts.js';
-import { routeToLayout } from './config/routeMap.js';
 
 import Page1 from './pages/Page1';
 import Page2 from './pages/Page2';
@@ -104,7 +102,6 @@ function Main() {
   return (
     <>
       {/* Simple navigation for testing purposes. Will remove with final version. Rendering if splash page is left first.*/}
-      {/*
       {!hideGlobalUI && (
         <nav
           style={{
@@ -124,28 +121,7 @@ function Main() {
           <Link to={'/iceRoom'}>IceRoomV1</Link>
         </nav>
       )}
-    */}
-
-      {!hideGlobalUI && (
-        <nav 
-          style={{ 
-            padding: '1rem', 
-            borderBottom: '1px solid #ccc', 
-            marginBottom: '1rem', 
-            display: 'flex', 
-            gap: '1rem', 
-            zIndex: 11 
-          }}
-        >
-          {Object.keys(routeToLayout).map((route) => (
-            <Link key={route} to={`/${route}`} style={{ zIndex: '12' }}>
-              {route}
-            </Link>
-          ))}
-        </nav>
-      )}
       
-
       <DndContext onDragStart={handleDragStart} onDragEnd={handleDragEnd} sensors={sensors}>
         <Routes>
           <Route path="/" element={
@@ -156,29 +132,6 @@ function Main() {
             />}
           />
 
-          {Object.entries(routeToLayout).map(([route, layoutKey]) => {
-            const layout = roomLayouts[layoutKey]; 
-            return (
-              <Route 
-                key={route}
-                path={`/${route}`}
-                element={
-                  <PageLayout 
-                    backgroundImage={layout.background}
-                    paths={layout.paths || []}
-                    showFill={true}
-                    containerPositions={layout.positions}
-                  >
-                    {layout.containers.map((id) => (
-                      <DraggableItem key={id} id={id} container={id} from={{ page: route, container: id }} /> 
-                    ))}
-                  </PageLayout>
-                }
-              />
-            ); 
-          })}
-
-          {/* 
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />}/> 
           <Route path="/page1" element={<Page1 />} />
@@ -191,7 +144,6 @@ function Main() {
           <Route path="/page8" element={<Page8 />} />
           <Route path="/page9" element={<Page9 />} />
           <Route path="/page10" element={<Page10 />} />
-          */}
 
           <Route path="*" element={<div>Select a page above **INSERT SPLASH PAGE / LOGIN</div>} />
 

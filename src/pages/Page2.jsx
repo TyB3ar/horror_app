@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import ContainerModal from '../components/ContainerModal';
 import { Link } from 'react-router-dom'
+import GameView from '../components/GameView';
+import tableWall from '../assets/rooms/tableWall.jpeg'; 
 
 const CONTAINERS = ['bodyBag', 'propertyBag', 'medicalChart'];
 
